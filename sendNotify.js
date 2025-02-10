@@ -80,7 +80,9 @@ function serverNotify(text, desp) {
 }
 
 function BarkNotify(text, desp,barkpush) {
-    BARK_PUSH = barkpush
+    let BARK_PUSH = barkpush
+    console.log('打印');
+    console.log('BARK_PUSH');
     return  new Promise(resolve => {
         console.log(BARK_PUSH);
         if (BARK_PUSH) {
@@ -96,8 +98,6 @@ function BarkNotify(text, desp,barkpush) {
                 console.log(err)
             })
         } else {
-            console.log(process.env.BARK_PUSH);
-            console.log(BARK_PUSH);
             console.log('\n您未提供Bark的APP推送BARK_PUSH，取消Bark推送消息通知\n');
             resolve()
         }
