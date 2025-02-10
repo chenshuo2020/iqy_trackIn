@@ -10,6 +10,7 @@ const $ = new Env('爱奇艺会员签到');
 const notify = $.isNode() ? require('./sendNotify') : '';
 // 公共变量
 const KEY = process.env.iQIYI_COOKIE
+const BARK_PUSH = process.env.BARK_PUSH
 
 async function downFile () {
     const url = 'https://raw.githubusercontent.com/chenshuo2020/iqy_trackIn/0ec5f2c9e196641edb5550dfc65fb6d53c34233c/iQIYI.js'
@@ -53,7 +54,7 @@ async function start() {
     if (fs.existsSync(path)) {
         content = fs.readFileSync(path, "utf8");
     }
-    await notify.sendNotify("爱奇艺签到-" + new Date().toLocaleDateString(), content);
+    await notify.sendNotify("爱奇艺签到-" + new Date().toLocaleDateString(), content,BARK_PUSH);
     console.log("爱奇艺签到-" + content)
 
     //运行完成后，删除下载的文件
