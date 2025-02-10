@@ -54,6 +54,8 @@ async function start() {
     if (fs.existsSync(path)) {
         content = fs.readFileSync(path, "utf8");
     }
+    console.log('打印外');
+    console.log(BARK_PUSH);
     await notify.sendNotify("爱奇艺签到-" + new Date().toLocaleDateString(), content,BARK_PUSH);
     console.log("爱奇艺签到-" + content)
 
