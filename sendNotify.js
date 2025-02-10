@@ -95,6 +95,8 @@ function BarkNotify(text, desp) {
                 console.log(err)
             })
         } else {
+            console.log(process.env.BARK_PUSH);
+            console.log(BARK_PUSH);
             console.log('\n您未提供Bark的APP推送BARK_PUSH，取消Bark推送消息通知\n');
             resolve()
         }
