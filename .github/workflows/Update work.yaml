@@ -20,5 +20,6 @@ jobs:
         run: npm install
       - run: node app.js
         env:
-          iQIYI_COOKIE: ${{ secrets.iQIYI_COOKIE }}
+          //iQIYI_COOKIE: ${{ secrets.iQIYI_COOKIE }}
+          iQIYI_COOKIE: '123'
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
