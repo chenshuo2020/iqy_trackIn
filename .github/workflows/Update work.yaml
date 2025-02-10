@@ -1,9 +1,6 @@
 name: Github iQIYI-DailyBonus
 
 on:
-  push:
-    branches:
-      - master
   watch:
     types: started
   schedule:
