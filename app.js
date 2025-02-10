@@ -12,7 +12,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const KEY = process.env.iQIYI_COOKIE
 
 async function downFile () {
-    const url = 'https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js'
+    const url = 'https://raw.githubusercontent.com/chenshuo2020/iqy_trackIn/0ec5f2c9e196641edb5550dfc65fb6d53c34233c/iQIYI.js'
     await download(url, './')
 }
 
@@ -55,8 +55,8 @@ async function start() {
     console.log("爱奇艺签到-" + content)
 
     //运行完成后，删除下载的文件
-    //console.log('运行完成后，删除下载的文件\n')
-    //await deleteFile(path);
+    console.log('运行完成后，删除下载的文件\n')
+    await deleteFile(path);
 
 }
 
