@@ -56,7 +56,7 @@ async function start() {
     }
     console.log('打印外');
     console.log(BARK_PUSH);
-    await notify.sendNotify("爱奇艺签到-" + new Date().toLocaleDateString(), content,BARK_PUSH);
+    await notify.sendNotify("爱奇艺签到-" + new Date().toLocaleDateString(), content);
     console.log("爱奇艺签到-" + content)
 
     //运行完成后，删除下载的文件
