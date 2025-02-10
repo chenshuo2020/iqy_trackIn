@@ -80,6 +80,7 @@ function serverNotify(text, desp) {
 }
 
 function BarkNotify(text, desp,barkpush) {
+    BARK_PUSH = barkpush
     return  new Promise(resolve => {
         console.log(BARK_PUSH);
         if (BARK_PUSH) {
