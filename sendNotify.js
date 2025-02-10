@@ -35,10 +35,10 @@ if (process.env.BARK_PUSH) {
     }
 }
 
-async function sendNotify(text, desp) {
+async function sendNotify(text, desp,barkpush) {
     //提供的通知
     await serverNotify(text, desp);
-    await BarkNotify(text, desp);
+    await BarkNotify(text, desp,barkpush);
 }
 
 function serverNotify(text, desp) {
@@ -79,7 +79,7 @@ function serverNotify(text, desp) {
     })
 }
 
-function BarkNotify(text, desp) {
+function BarkNotify(text, desp,barkpush) {
     return  new Promise(resolve => {
         console.log(BARK_PUSH);
         if (BARK_PUSH) {
