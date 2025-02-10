@@ -82,7 +82,8 @@ function serverNotify(text, desp) {
 function BarkNotify(text, desp,barkpush) {
     let BARK_PUSH = barkpush
     console.log('打印');
-    console.log('BARK_PUSH');
+    console.log(BARK_PUSH);
+    console.log(barkpush);
     return  new Promise(resolve => {
         console.log(BARK_PUSH);
         if (BARK_PUSH) {
