@@ -18,6 +18,7 @@ async function downFile () {
 
 async function changeFiele () {
     let content = await fs.readFileSync('./iQIYI.js', 'utf8')
+    console.log('\n您设置的Key:${KEY}\n');
     content = content.replace(/var cookie = ''/, `var cookie = '${KEY}'`)
     await fs.writeFileSync( './iQIYI.js', content, 'utf8')
 }
