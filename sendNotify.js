@@ -17,6 +17,7 @@ const rp = require('request-promise')
 if (process.env.PUSH_KEY) {
     SCKEY = process.env.PUSH_KEY;
 }
+console.log(process.env.BARK_PUSH);
 if (process.env.BARK_PUSH) {
     if(process.env.BARK_PUSH.indexOf('https') > -1 || process.env.BARK_PUSH.indexOf('http') > -1) {
         //兼容BARK自建用户
@@ -80,6 +81,7 @@ function serverNotify(text, desp) {
 
 function BarkNotify(text, desp) {
     return  new Promise(resolve => {
+        console.log(BARK_PUSH);
         if (BARK_PUSH) {
             const options = {
                 url: `${BARK_PUSH}/${encodeURIComponent(text)}/${encodeURIComponent(desp)}?sound=${BARK_SOUND}`,
