@@ -106,44 +106,6 @@ function BarkNotify(text, desp) {
         }
     })
 }
-function BarkNotify(text, desp, params = {}) {
-  return new Promise((resolve) => {
-    if (BARK_PUSH) {
-      const options = {
-        url: `${BARK_PUSH}/${encodeURIComponent(text)}/${encodeURIComponent(
-          desp,
-        )}?sound=${BARK_SOUND}&${querystring.stringify(params)}`,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        timeout,
-      };
-      $.get(options, (err, resp, data) => {
-        try {
-          if (err) {
-            console.log('Bark APP发送通知调用API失败！！\n');
-            console.log(err);
-          } else {
-            data = JSON.parse(data);
-            if (data.code === 200) {
-              console.log('Bark APP发送通知消息成功ߎ霮');
-            } else {
-              console.log(`${data.message}\n`);
-            }
-          }
-        } catch (e) {
-          $.logErr(e, resp);
-        } finally {
-          resolve();
-        }
-      });
-    } else {
-      console.log('您未提供Bark的APP推送BARK_PUSH，取消Bark推送消息通知🚫\n');
-      resolve();
-    }
-  });
-}
-
 module.exports = {
     sendNotify,
     BarkNotify,
